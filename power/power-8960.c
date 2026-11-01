@@ -48,6 +48,11 @@
 #include "performance.h"
 #include "power-common.h"
 
+/* Android 9 removed this legacy hint from hardware/power.h. */
+#ifndef POWER_HINT_SET_PROFILE
+#define POWER_HINT_SET_PROFILE 0x00000011
+#endif
+
 static int current_power_profile = PROFILE_BALANCED;
 
 int get_number_of_profiles() {
